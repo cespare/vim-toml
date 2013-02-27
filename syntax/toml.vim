@@ -7,7 +7,10 @@ if exists("b:current_syntax")
   finish
 endif
 
-syn region tomlString start=/"/ skip=/\\\\\|\\"/ end=/"/
+syn match tomlEscape /\\[0tnr"\\]/ display
+hi def link tomlEscape SpecialChar
+
+syn region tomlString start=/"/ skip=/\\\\\|\\"/ end=/"/ contains=tomlEscape
 hi def link tomlString String
 
 syn match tomlInteger /\<-\?\d\+\>/ display
