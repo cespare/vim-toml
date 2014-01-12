@@ -25,7 +25,7 @@ hi def link tomlBoolean Boolean
 syn match tomlDate /\d\{4\}-\d\{2\}-\d\{2\}T\d\{2\}:\d\{2\}:\d\{2\}Z/ display
 hi def link tomlDate Constant
 
-syn match tomlKeyGroup /^\s*\[.\+\]$/
+syn match tomlKeyGroup /^\s*\[.\+\]\s*\(#.*\)\?$/ contains=tomlComment
 hi def link tomlKeyGroup Identifier
 
 syn keyword tomlTodo TODO FIXME XXX BUG contained
