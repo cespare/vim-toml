@@ -8,10 +8,10 @@ This was developed for the following TOML revision:
 
 ## Installation
 
-## Pathogen
+### Pathogen
 
 Set up [Pathogen](https://github.com/tpope/vim-pathogen) then clone/submodule this repo into `~/.vim/bundle/toml`, or wherever you've pointed your Pathogen.
 
-## Vundle
+### Vundle
 
 Set up [Vundle](https://github.com/gmarik/Vundle.vim) then add `Bundle 'cespare/vim-toml'` to your vimrc and run `:BundleInstall` from a fresh vim.
