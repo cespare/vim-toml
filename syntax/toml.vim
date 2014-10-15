@@ -19,6 +19,10 @@ hi def link tomlLineEscape SpecialChar
 syn region tomlString oneline start=/"/ skip=/\\\\\|\\"/ end=/"/ contains=tomlEscape
 " Multi-line basic strings
 syn region tomlString start=/"""/ end=/"""/ contains=tomlEscape,tomlLineEscape
+" Literal strings
+syn region tomlString oneline start=/'/ end=/'/
+" Multi-line literal strings
+syn region tomlString start=/'''/ end=/'''/
 hi def link tomlString String
 
 syn match tomlInteger /\<-\?\d\+\>/ display
