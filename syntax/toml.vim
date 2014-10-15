@@ -12,7 +12,13 @@ syn match tomlEscape /\\u\x\{4}/ contained
 syn match tomlEscape /\\U\x\{8}/ contained
 hi def link tomlEscape SpecialChar
 
-syn region tomlString start=/"/ skip=/\\\\\|\\"/ end=/"/ contains=tomlEscape
+syn match tomlLineEscape /\\$/ contained
+hi def link tomlLineEscape SpecialChar
+
+" Basic strings
+syn region tomlString oneline start=/"/ skip=/\\\\\|\\"/ end=/"/ contains=tomlEscape
+" Multi-line basic strings
+syn region tomlString start=/"""/ end=/"""/ contains=tomlEscape,tomlLineEscape
 hi def link tomlString String
 
 syn match tomlInteger /\<-\?\d\+\>/ display
