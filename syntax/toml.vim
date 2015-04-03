@@ -34,7 +34,7 @@ hi def link tomlFloat Float
 syn match tomlBoolean /\<\%(true\|false\)\>/ display
 hi def link tomlBoolean Boolean
 
-syn match tomlDate /\d\{4\}-\d\{2\}-\d\{2\}T\d\{2\}:\d\{2\}:\d\{2\}Z/ display
+syn match tomlDate /\d\{4\}-\d\{2\}-\d\{2\}T\d\{2\}:\d\{2\}:\d\{2\}Z\?/ display
 hi def link tomlDate Constant
 
 syn match tomlTable /^\s*\[[^#\[\]]\+\]\s*\(#.*\)\?$/ contains=tomlComment
