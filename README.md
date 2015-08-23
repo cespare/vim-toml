@@ -11,3 +11,7 @@ Set up [Pathogen](https://github.com/tpope/vim-pathogen) then clone/submodule th
 ### Vundle
 
 Set up [Vundle](https://github.com/gmarik/Vundle.vim) then add `Bundle 'cespare/vim-toml'` to your vimrc and run `:BundleInstall` from a fresh vim.
+
+## Contributing
+
+Contributions are very welcome! Just open a PR.
