@@ -39,6 +39,8 @@ hi def link tomlBoolean Boolean
 syn match tomlDate /\d\{4\}-\d\{2\}-\d\{2\}T\d\{2\}:\d\{2\}:\d\{2\}\%(\.\d\+\)\?\%(Z\|[+-]\d\{2\}:\d\{2\}\)/ display
 hi def link tomlDate Constant
 
+syn region tomlArray  start='\[' end='\]' contains=tomlString,tomlInteger,tomlFloat,tomlBoolean,tomlDate,tomlArray,tomlComment fold
+
 syn match tomlTable /^\s*\[[^#\[\]]\+\]\s*\(#.*\)\?$/ contains=tomlComment
 hi def link tomlTable Identifier
 
