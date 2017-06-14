@@ -12,6 +12,10 @@ Set up [Pathogen](https://github.com/tpope/vim-pathogen) then clone/submodule th
 
 Set up [Vundle](https://github.com/VundleVim/Vundle.vim) then add `Plugin 'cespare/vim-toml'` to your vimrc and run `:PluginInstall` from a fresh vim.
 
+### vim-plug
+
+Set up [vim-plug](https://github.com/junegunn/vim-plug). In your .vimrc, between the lines for `call plug#begin()` and `call plug#end()`, add the line `Plug 'cespare/vim-toml'`. Then run `:PlugInstall` from a fresh vim instance.
+
 ## Contributing
 
 Contributions are very welcome! Just open a PR.
