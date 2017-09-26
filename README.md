@@ -18,7 +18,7 @@ Set up [vim-plug](https://github.com/junegunn/vim-plug). In your .vimrc, between
 
 ### Janus
 
-Set up [janus](https://github.com/carlhuda/janus) then clone/submodule this repo into `~/.janus` and restart vim.
+Set up [Janus](https://github.com/carlhuda/janus) and than clone/submodule this repo into `~/.janus` and restart vim.
 
 ## Contributing
 
