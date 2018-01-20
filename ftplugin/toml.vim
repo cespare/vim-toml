@@ -29,8 +29,6 @@ else
 endif
 unlet s:delims
 
-let b:undo_ftplugin = ""
-
 let &cpo = s:save_cpo
 unlet s:save_cpo
 
