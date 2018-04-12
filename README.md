@@ -4,6 +4,10 @@ Vim syntax for [TOML](https://github.com/toml-lang/toml).
 
 ## Installation
 
+### Vim 8 native third-party package loading
+
+Clone/submodule this repo into `~/.vim/pack/FOOBAR/start/vim-toml`, replacing `FOOBAR` with any name you like. This only works in Vim 8.x or later.
+
 ### Pathogen
 
 Set up [Pathogen](https://github.com/tpope/vim-pathogen) then clone/submodule this repo into `~/.vim/bundle/toml`, or wherever you've pointed your Pathogen.
