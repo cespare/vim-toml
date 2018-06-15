@@ -26,6 +26,7 @@ syn region tomlString start=/'''/ end=/'''/
 hi def link tomlString String
 
 syn match tomlInteger /\<[+-]\=[0-9]\(_\=\d\)*\>/ display
+syn match tomlInteger /\<[+-]\=\(inf\|nan\)\>/ display
 hi def link tomlInteger Number
 
 syn match tomlFloat /\<[+-]\=[0-9]\(_\=\d\)*\.\d\+\>/ display
