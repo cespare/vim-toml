@@ -4,6 +4,10 @@ Vim syntax for [TOML](https://github.com/toml-lang/toml).
 
 ## Installation
 
+### Without a package manager
+
+`git clone` or symlink this repository to `~/.vim/pack/toml`.
+
 ### Pathogen
 
 Set up [Pathogen](https://github.com/tpope/vim-pathogen) then clone/submodule this repo into `~/.vim/bundle/toml`, or wherever you've pointed your Pathogen.
