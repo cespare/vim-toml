@@ -56,10 +56,10 @@ syn region tomlKeySq oneline start=/\v(^|[{,])\s*\zs'/ end=/'\ze\s*=/
 hi def link tomlKeySq Identifier
 
 syn region tomlTable oneline start=/^\s*\[[^\[]/ end=/\]/ contains=tomlKey,tomlKeyDq,tomlKeySq
-hi def link tomlTable Identifier
+hi def link tomlTable Title
 
 syn region tomlTableArray oneline start=/^\s*\[\[/ end=/\]\]/ contains=tomlKey,tomlKeyDq,tomlKeySq
-hi def link tomlTableArray Identifier
+hi def link tomlTableArray Title
 
 syn keyword tomlTodo TODO FIXME XXX BUG contained
 hi def link tomlTodo Todo
