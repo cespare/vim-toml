@@ -1,7 +1,7 @@
 " File: ftplugin/toml.vim
 " Author: Kevin Ballard <kevin@sb.org>
 " Description: FileType Plugin for Toml
-" Last Change: Dec 09, 2014
+" Last Change: Jan 19, 2019
 
 if exists('b:did_ftplugin')
     finish
@@ -10,6 +10,7 @@ let b:did_ftplugin = 1
 
 let s:save_cpo = &cpo
 set cpo&vim
+let b:undo_ftplugin = 'setlocal commentstring<'
 
 setlocal commentstring=#\ %s
 
