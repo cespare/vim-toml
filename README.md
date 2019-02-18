@@ -28,7 +28,7 @@ Set up [Vundle](https://github.com/VundleVim/Vundle.vim) then add `Plugin
 
 Set up [vim-plug](https://github.com/junegunn/vim-plug). In your .vimrc, between
 the lines for `call plug#begin()` and `call plug#end()`, add the line `Plug
-'cespare/vim-toml'`. Save `:w` and source `so%` your .vimrc and then then run `:PlugInstall`.
+'cespare/vim-toml'`. Reload your .vimrc and then run `:PlugInstall`.
 
 ### Janus
 
