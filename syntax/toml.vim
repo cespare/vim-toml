@@ -3,7 +3,7 @@
 " URL:        https://github.com/cespare/vim-toml
 " LICENSE:    MIT
 
-if exists("b:current_syntax")
+if exists('b:current_syntax')
   finish
 endif
 
@@ -73,4 +73,4 @@ hi def link tomlComment Comment
 
 syn sync minlines=500
 
-let b:current_syntax = "toml"
+let b:current_syntax = 'toml'
