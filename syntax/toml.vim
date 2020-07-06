@@ -40,13 +40,14 @@ syn match tomlDate /\d\{4\}-\d\{2\}-\d\{2\}/ display
 syn match tomlDate /\d\{2\}:\d\{2\}:\d\{2\}\%(\.\d\+\)\?/ display
 syn match tomlDate /\d\{4\}-\d\{2\}-\d\{2\}[T ]\d\{2\}:\d\{2\}:\d\{2\}\%(\.\d\+\)\?\%(Z\|[+-]\d\{2\}:\d\{2\}\)\?/ display
 
-syn match tomlKey /\v(^|[{,])\s*\zs[[:alnum:]._-]+\ze\s*\=/ display
+syn match tomlDotInKey /\v[^.]+\zs\./ contained display
+syn match tomlKey /\v(^|[{,])\s*\zs[[:alnum:]._-]+\ze\s*\=/ contains=tomlDotInKey display
 syn region tomlKeyDq oneline start=/\v(^|[{,])\s*\zs"/ end=/"\ze\s*=/ contains=tomlEscape
 syn region tomlKeySq oneline start=/\v(^|[{,])\s*\zs'/ end=/'\ze\s*=/
 
-syn region tomlTable oneline start=/^\s*\[[^\[]/ end=/\]/ contains=tomlKey,tomlKeyDq,tomlKeySq
+syn region tomlTable oneline start=/^\s*\[[^\[]/ end=/\]/ contains=tomlKey,tomlKeyDq,tomlKeySq,tomlDotInKey
 
-syn region tomlTableArray oneline start=/^\s*\[\[/ end=/\]\]/ contains=tomlKey,tomlKeyDq,tomlKeySq
+syn region tomlTableArray oneline start=/^\s*\[\[/ end=/\]\]/ contains=tomlKey,tomlKeyDq,tomlKeySq,tomlDotInKey
 
 syn region tomlKeyValueArray start=/=\s*\[\zs/ end=/\]/ contains=@tomlValue
 
@@ -62,6 +63,7 @@ hi def link tomlComment Comment
 hi def link tomlTodo Todo
 hi def link tomlTableArray Title
 hi def link tomlTable Title
+hi def link tomlDotInKey Normal
 hi def link tomlKeySq Identifier
 hi def link tomlKeyDq Identifier
 hi def link tomlKey Identifier
