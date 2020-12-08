@@ -1,0 +1,19 @@
+# Visual test file.
+# You can run
+#
+#     nnoremap <F10> <cmd>echo synIDattr(synID(line('.'), col('.'), 1), 'name')<CR>
+#
+# and then press F10 to get the highlight group under the cursor.
+
+issue9 = [
+  ["a", "b", "c"]
+]
+
+issue10_1 = -12
+issue10_2 = +200.3
+
+issue11 = -210_000.0
+
+issue13 = { version="1.0", features=["derive"] }
+
+# vim: et sw=2 sts=2
