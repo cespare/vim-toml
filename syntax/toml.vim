@@ -9,7 +9,7 @@ if exists('b:current_syntax')
   finish
 endif
 
-syn match tomlNoise /,/ display nextgroup=tomlInlineKey,@tomlValue skipempty skipwhite
+syn match tomlNoise /[,\.]/ display nextgroup=tomlInlineKey,@tomlValue skipempty skipwhite
 
 syn match tomlOperator "=" display nextgroup=@tomlValue skipempty skipwhite
 
@@ -45,15 +45,15 @@ syn match tomlDate /\d\{4\}-\d\{2\}-\d\{2\}/ display
 syn match tomlDate /\d\{2\}:\d\{2\}:\d\{2\}\%(\.\d\+\)\?/ display
 syn match tomlDate /\d\{4\}-\d\{2\}-\d\{2\}[T ]\d\{2\}:\d\{2\}:\d\{2\}\%(\.\d\+\)\?\%(Z\|[+-]\d\{2\}:\d\{2\}\)\?/ display
 
-syn match tomlKey /\v[a-z_\-]+(\.[a-z_\-]+)*(\s*\=)@=/ display
+syn match tomlKey /\v[a-z_\-]+(\.[a-z_\-]+)*(\s*\=)@=/ contains=tomlNoise display
 
-syn region tomlKeyDq oneline start=/\v(^|[{,])\s*\zs"/ end=/"\ze\s*=/ contains=tomlEscape
+syn region tomlKeyDq oneline start=/\v(^|[{,])\s*\zs"/ end=/"\ze\s*=/ contains=tomlEscape,tomlNoise
 
-syn region tomlKeySq oneline start=/\v(^|[{,])\s*\zs'/ end=/'\ze\s*=/
+syn region tomlKeySq oneline start=/\v(^|[{,])\s*\zs'/ end=/'\ze\s*=/ contains=tomlNoise
 
 syn cluster tomlTableKeys contains=tomlKey,tomlKeyDq,tomlKeySq
 
-syn match tomlTable /\v(^\s*\[?\s*)@<=\[[a-z_\-]+(\.[a-z_\-]+)*\](\s*\]?\s*$)@=/ contains=@tomlKeys display
+syn match tomlTable /\v(^\s*\[?\s*)@<=\[[a-z_\-]+(\.[a-z_\-]+)*\](\s*\]?\s*$)@=/ contains=tomlNoise,@tomlKeys display
 
 syn region tomlTableInline matchgroup=tomlTable start="\V{" end="\V}" contains=ALLBUT,tomlTable transparent
 
