@@ -45,7 +45,7 @@ syn match tomlDate /\d\{4\}-\d\{2\}-\d\{2\}/ display
 syn match tomlDate /\d\{2\}:\d\{2\}:\d\{2\}\%(\.\d\+\)\?/ display
 syn match tomlDate /\d\{4\}-\d\{2\}-\d\{2\}[T ]\d\{2\}:\d\{2\}:\d\{2\}\%(\.\d\+\)\?\%(Z\|[+-]\d\{2\}:\d\{2\}\)\?/ display
 
-syn match tomlKey /\v[a-z_\-]+(\.[a-z_\-]+)*(\s*\=)@=/ contains=tomlNoise display
+syn match tomlKey /\v(\w|\-)+(\.(\w|\-)+)*(\s*\=)@=/ contains=tomlNoise display
 
 syn region tomlKeyDq oneline start=/\v(^|[{,])\s*\zs"/ end=/"\ze\s*=/ contains=tomlEscape,tomlNoise
 
