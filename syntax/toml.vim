@@ -76,3 +76,5 @@ hi def link tomlComment Comment
 syn sync minlines=500
 
 let b:current_syntax = 'toml'
+
+" vim: et sw=2 sts=2

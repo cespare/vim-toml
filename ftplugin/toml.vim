@@ -6,7 +6,7 @@
 " Last Change: Sep 21, 2021
 
 if exists('b:did_ftplugin')
-    finish
+  finish
 endif
 let b:did_ftplugin = 1
 
@@ -20,4 +20,4 @@ setlocal comments=:#
 let &cpo = s:save_cpo
 unlet s:save_cpo
 
-" vim: set et sw=4 ts=4:
+" vim: et sw=2 sts=2
