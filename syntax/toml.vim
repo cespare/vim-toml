@@ -9,7 +9,7 @@ if exists('b:current_syntax')
   finish
 endif
 
-syn match tomlNoise /[,\.]/ display nextgroup=tomlInlineKey,@tomlValue skipempty skipwhite
+syn match tomlNoise "[,.]" display nextgroup=@tomlValue skipempty skipwhite
 
 syn match tomlOperator "=" display nextgroup=@tomlValue skipempty skipwhite
 
