@@ -1,7 +1,8 @@
-" File: ftplugin/toml.vim
-" Author: Kevin Ballard <kevin@sb.org>
-" Description: FileType Plugin for Toml
-" Last Change: Feb 12, 2019
+" Vim filetype plugin
+" Language:    TOML
+" Homepage:    https://github.com/cespare/vim-toml
+" Author:      Kevin Ballard <kevin@sb.org>
+" Last Change: Sep 21, 2021
 
 if exists('b:did_ftplugin')
     finish

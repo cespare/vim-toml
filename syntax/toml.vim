@@ -1,7 +1,8 @@
-" Language:   TOML
-" Maintainer: Caleb Spare <cespare@gmail.com>
-" URL:        https://github.com/cespare/vim-toml
-" LICENSE:    MIT
+" Vim syntax file
+" Language:    TOML
+" Homepage:    https://github.com/cespare/vim-toml
+" Maintainer:  Caleb Spare <cespare@gmail.com>
+" Last Change: Sep 21, 2021
 
 if exists('b:current_syntax')
   finish
