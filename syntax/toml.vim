@@ -1,8 +1,9 @@
 " Vim syntax file
-" Language:    TOML
-" Homepage:    https://github.com/cespare/vim-toml
-" Maintainer:  Caleb Spare <cespare@gmail.com>
-" Last Change: Sep 21, 2021
+" Language:            TOML
+" Homepage:            https://github.com/cespare/vim-toml
+" Maintainer:          Aman Verma
+" Previous Maintainer: Caleb Spare <cespare@gmail.com>
+" Last Change:         Sep 21, 2021
 
 if exists('b:current_syntax')
   finish

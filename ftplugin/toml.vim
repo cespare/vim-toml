@@ -1,6 +1,7 @@
 " Vim filetype plugin
 " Language:    TOML
 " Homepage:    https://github.com/cespare/vim-toml
+" Maintainer:  Aman Verma
 " Author:      Kevin Ballard <kevin@sb.org>
 " Last Change: Sep 21, 2021
 
