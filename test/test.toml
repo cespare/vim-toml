@@ -16,4 +16,16 @@ issue11 = -210_000.0
 
 issue13 = { version="1.0", features=["derive"] }
 
+# https://github.com/cespare/vim-toml/pull/52
+[foo.baz]
+apple.type = "fruit"
+3.14159 = "pi"
+"127.0.0.1" = "value"
+
+[[foo.quux]]
+e = 2
+
+# https://github.com/cespare/vim-toml/issues/58
+site."google.com" = true
+
 # vim: et sw=2 sts=2
