@@ -1,6 +1,8 @@
 # vim-toml
 
-Vim syntax for [TOML](https://github.com/toml-lang/toml).
+Vim syntax for [TOML](https://github.com/toml-lang/toml). As of Neovim 0.6 and
+Vim 8.2.3519, these runtime files are included in the main (Neo)Vim
+distribution.
 
 ## Installation
 
