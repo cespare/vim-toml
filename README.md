@@ -11,9 +11,7 @@ distribution.
 Clone or submodule this repo into your Vim packages location. Example:
 
 ```
-mkdir -p ~/.vim/pack/plugins/start
-cd ~/.vim/pack/plugins/start
-git clone https://github.com/cespare/vim-toml.git
+git clone https://github.com/cespare/vim-toml.git ~/.vim/pack/plugins/start/vim-toml
 ```
 
 ### Pathogen
