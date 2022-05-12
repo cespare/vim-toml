@@ -51,7 +51,7 @@ syn region tomlKeyDq oneline start=/\v(^|[{,])\s*\zs"/ end=/"\ze\s*=/ contains=t
 
 syn region tomlKeySq oneline start=/\v(^|[{,])\s*\zs'/ end=/'\ze\s*=/
 
-syn match tomlTable /\v\[\w+[A-Za-z_.-]*\]/ contains=tomlNoise display
+syn match tomlTable /\v\[\w+[0-9A-Za-z_.-]*\]/ contains=tomlNoise display
 
 syn region tomlTableInline matchgroup=tomlTable start="{" end="}" transparent
 

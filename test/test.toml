@@ -20,6 +20,10 @@ issue11 = -210_000.0
 # https://github.com/cespare/vim-toml/issues/13
 issue13 = { version="1.0", features=["derive"] }
 
+[target.x86_64-unknown-linux-gnu]
+linker = "clang"
+rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]
+
 # https://github.com/cespare/vim-toml/pull/52
 [foo.baz]
 apple.type = "fruit"
