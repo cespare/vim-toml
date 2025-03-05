@@ -16,6 +16,7 @@ let b:undo_ftplugin = 'setlocal commentstring< comments<'
 
 setlocal commentstring=#\ %s
 setlocal comments=:#
+setlocal iskeyword+=-
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
