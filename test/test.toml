@@ -26,6 +26,12 @@ apple.type = "fruit"
 3.14159 = "pi"
 "127.0.0.1" = "value"
 
+[foo."".'bar, actually'] # Empty string as key, key with a comma
+foldbug = [
+  ["a"] , # BUG: Remove comma to trigger folding bug
+]
+'' = "empty"
+
 [[foo.quux]]
 e = 2
 
