@@ -12,7 +12,7 @@ let b:did_ftplugin = 1
 
 let s:save_cpo = &cpo
 set cpo&vim
-let b:undo_ftplugin = 'setlocal commentstring< comments<'
+let b:undo_ftplugin = 'setlocal commentstring< comments< iskeyword<'
 
 setlocal commentstring=#\ %s
 setlocal comments=:#
