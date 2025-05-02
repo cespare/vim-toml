@@ -9,9 +9,14 @@ if exists('b:current_syntax')
   finish
 endif
 
+syn match tomlNoise "[,.]" display nextgroup=@tomlValue skipempty skipwhite
+
+syn match tomlOperator "=" display nextgroup=@tomlValue skipempty skipwhite
+
 syn match tomlEscape /\\[btnfr"/\\]/ display contained
 syn match tomlEscape /\\u\x\{4}/ contained
 syn match tomlEscape /\\U\x\{8}/ contained
+
 syn match tomlLineEscape /\\$/ contained
 
 " Basic strings
@@ -40,42 +45,43 @@ syn match tomlDate /\d\{4\}-\d\{2\}-\d\{2\}/ display
 syn match tomlDate /\d\{2\}:\d\{2\}:\d\{2\}\%(\.\d\+\)\?/ display
 syn match tomlDate /\d\{4\}-\d\{2\}-\d\{2\}[T ]\d\{2\}:\d\{2\}:\d\{2\}\%(\.\d\+\)\?\%(Z\|[+-]\d\{2\}:\d\{2\}\)\?/ display
 
-syn match tomlDotInKey /\v[^.]+\zs\./ contained display
-syn match tomlKey /\v(^|[{,])\s*\zs[[:alnum:]._-]+\ze\s*\=/ contains=tomlDotInKey display
+syn match tomlKey /\v\w+[A-Za-z_.-]*(\s*\=)@=/ contains=tomlNoise display
+
 syn region tomlKeyDq oneline start=/\v(^|[{,])\s*\zs"/ end=/"\ze\s*=/ contains=tomlEscape
+
 syn region tomlKeySq oneline start=/\v(^|[{,])\s*\zs'/ end=/'\ze\s*=/
 
-syn region tomlTable oneline start=/^\s*\[[^\[]/ end=/\]/ contains=tomlKey,tomlKeyDq,tomlKeySq,tomlDotInKey
+syn match tomlTable /\v\[\w+[0-9A-Za-z_.-]*\]/ contains=tomlNoise display
 
-syn region tomlTableArray oneline start=/^\s*\[\[/ end=/\]\]/ contains=tomlKey,tomlKeyDq,tomlKeySq,tomlDotInKey
+syn region tomlTableInline matchgroup=tomlTable start="{" end="}" transparent
 
-syn region tomlKeyValueArray start=/=\s*\[\zs/ end=/\]/ contains=@tomlValue
+syn cluster tomlValue contains=tomlArray,tomlTableInline,tomlString,tomlInteger,tomlFloat,tomlBoolean,tomlDate,tomlComment
 
-syn region tomlArray start=/\[/ end=/\]/ contains=@tomlValue contained
-
-syn cluster tomlValue contains=tomlArray,tomlString,tomlInteger,tomlFloat,tomlBoolean,tomlDate,tomlComment
+syn match tomlArray /\v[\[\]]/ contains=tomlTable display
 
 syn keyword tomlTodo TODO FIXME XXX BUG contained
 
 syn match tomlComment /#.*/ contains=@Spell,tomlTodo
 
-hi def link tomlComment Comment
-hi def link tomlTodo Todo
-hi def link tomlTableArray Title
-hi def link tomlTable Title
-hi def link tomlDotInKey Normal
-hi def link tomlKeySq Identifier
-hi def link tomlKeyDq Identifier
-hi def link tomlKey Identifier
-hi def link tomlDate Constant
+hi def link tomlArray tomlNoise
 hi def link tomlBoolean Boolean
+hi def link tomlComment Comment
+hi def link tomlDate Constant
+hi def link tomlEscape SpecialChar
 hi def link tomlFloat Float
 hi def link tomlInteger Number
-hi def link tomlString String
+hi def link tomlKey Identifier
+hi def link tomlKeyDq tomlKey
+hi def link tomlKeySq tomlKey
 hi def link tomlLineEscape SpecialChar
-hi def link tomlEscape SpecialChar
+hi def link tomlNoise Delimiter
+hi def link tomlOperator Operator
+hi def link tomlString String
+hi def link tomlTable Title
+hi def link tomlTodo Todo
 
 syn sync minlines=500
+
 let b:current_syntax = 'toml'
 
 " vim: et sw=2 sts=2
