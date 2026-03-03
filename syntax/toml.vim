@@ -9,7 +9,8 @@ if exists('b:current_syntax')
   finish
 endif
 
-syn match tomlEscape /\\[btnfr"/\\]/ display contained
+syn match tomlEscape /\\[betnfr"/\\]/ display contained
+syn match tomlEscape /\\x\x\{2}/ contained
 syn match tomlEscape /\\u\x\{4}/ contained
 syn match tomlEscape /\\U\x\{8}/ contained
 syn match tomlLineEscape /\\$/ contained
