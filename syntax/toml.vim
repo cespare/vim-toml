@@ -37,8 +37,8 @@ syn match tomlBoolean /\<\%(true\|false\)\>/ display
 
 " https://tools.ietf.org/html/rfc3339
 syn match tomlDate /\d\{4\}-\d\{2\}-\d\{2\}/ display
-syn match tomlDate /\d\{2\}:\d\{2\}:\d\{2\}\%(\.\d\+\)\?/ display
-syn match tomlDate /\d\{4\}-\d\{2\}-\d\{2\}[T ]\d\{2\}:\d\{2\}:\d\{2\}\%(\.\d\+\)\?\%(Z\|[+-]\d\{2\}:\d\{2\}\)\?/ display
+syn match tomlDate /\d\{2\}:\d\{2\}\%(:\d\{2\}\%(\.\d\+\)\?\)\?/ display
+syn match tomlDate /\d\{4\}-\d\{2\}-\d\{2\}[Tt ]\d\{2\}:\d\{2\}\%(:\d\{2\}\%(\.\d\+\)\?\)\?\%([Zz]\|[+-]\d\{2\}:\d\{2\}\)\?/ display
 
 syn match tomlDotInKey /\v[^.]+\zs\./ contained display
 syn match tomlKey /\v(^|[{,])\s*\zs[[:alnum:]._-]+\ze\s*\=/ contains=tomlDotInKey display
