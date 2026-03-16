@@ -46,9 +46,14 @@ syn match tomlKey /\v(^|[{,])\s*\zs[[:alnum:]._-]+\ze\s*\=/ contains=tomlDotInKe
 syn region tomlKeyDq oneline start=/\v(^|[{,])\s*\zs"/ end=/"\ze\s*=/ contains=tomlEscape
 syn region tomlKeySq oneline start=/\v(^|[{,])\s*\zs'/ end=/'\ze\s*=/
 
-syn region tomlTable oneline start=/^\s*\[[^\[]/ end=/\]/ contains=tomlKey,tomlKeyDq,tomlKeySq,tomlDotInKey
+" Match table and table array headers. Distinguish from inline arrays by
+" allowing commas only inside single or double quotes.
+let s:HEADER_RE = '^\s*\[\[=%(([''"])%(\1@!.|\\"){-}\1|[^,''"]{-1,}){-1,}\]\]=\s*%(#|$)'
+exe 'syn region tomlFold start=/\v' . s:HEADER_RE . '/ end=/\v%(' . s:HEADER_RE . ')@=/ fold transparent'
 
-syn region tomlTableArray oneline start=/^\s*\[\[/ end=/\]\]/ contains=tomlKey,tomlKeyDq,tomlKeySq,tomlDotInKey
+syn region tomlTable oneline start=/^\s*\[[^\[]/ end=/\]/ contains=tomlKey,tomlKeyDq,tomlKeySq,tomlDotInKey containedin=tomlFold contained
+
+syn region tomlTableArray oneline start=/^\s*\[\[/ end=/\]\]/ contains=tomlKey,tomlKeyDq,tomlKeySq,tomlDotInKey containedin=tomlFold contained
 
 syn region tomlKeyValueArray start=/=\s*\[\zs/ end=/\]/ contains=@tomlValue
 
