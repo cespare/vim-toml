@@ -12,11 +12,13 @@ let b:did_ftplugin = 1
 
 let s:save_cpo = &cpo
 set cpo&vim
-let b:undo_ftplugin = 'setlocal commentstring< comments< iskeyword<'
+let b:undo_ftplugin = 'setlocal commentstring< comments< iskeyword< foldmethod< foldexpr<'
 
 setlocal commentstring=#\ %s
 setlocal comments=:#
 setlocal iskeyword+=-
+setlocal foldmethod=expr
+setlocal foldexpr=getline(nextnonblank(v:lnum+1))=~'^['?'<1':1
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
