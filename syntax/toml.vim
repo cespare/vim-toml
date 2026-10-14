@@ -34,7 +34,8 @@ syn match tomlInteger /[+-]\=\(inf\|nan\)/ display
 syn match tomlFloat /[+-]\=\d\(_\=\d\)*\.\d\+/ display
 syn match tomlFloat /[+-]\=\d\(_\=\d\)*\(\.\d\(_\=\d\)*\)\=[eE][+-]\=\d\(_\=\d\)*/ display
 
-syn match tomlBoolean /\<\%(true\|false\)\>/ display
+syn keyword tomlBoolean true false display
+
 
 " https://tools.ietf.org/html/rfc3339
 syn match tomlDate /\d\{4\}-\d\{2\}-\d\{2\}/ display
